@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
   validates_presence_of :name
-  has_many :blogs, :though => :blog_tags
-  has many :events, :though => :event_tags
+  has_many :blogs, :through => :blog_tags
+  has_many :events, :through => :event_tags
 end

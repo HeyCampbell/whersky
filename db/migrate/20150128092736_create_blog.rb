@@ -4,7 +4,7 @@ class CreateBlog < ActiveRecord::Migration
       t.string :content
       t.string :title
       t.string :headline
-      t.references :blog_tags
+      t.references :blog_tag
       t.references :user
 
       t.timestamps
