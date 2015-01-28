@@ -10,15 +10,16 @@ blog.tags << fun_tag
 
 3.times do
   user = User.create(name: Faker::Internet.name, email: Faker::Internet.email, password: 'jenny', password_confirmation: 'jenny', author: true)
-
-  w_tag = Tag.create(name: Faker::App.name)
-  fun_tag = Tag.create(name: Faker::Hacker.noun)
-  blog = Blog.create(user: user, title: 'First Blog', content: Faker::Hacker.say_something_smart)
-  blog.tags << w_tag
-  blog.tags << fun_tag
+  5.times do
+    w_tag = Tag.create(name: Faker::App.name)
+    fun_tag = Tag.create(name: Faker::Hacker.noun)
+    blog = Blog.create(user: user, title: Faker::Hacker.say_something_smart, content: Faker::Lorem.paragraph)
+    blog.tags << w_tag
+    blog.tags << fun_tag
+  end
 end
 
-2.times do
+10.times do
   event = Event.create(title: Faker::Hacker.say_something_smart,
     :description => Faker::Lorem.sentence,
     location: Faker::Address.street_address,
