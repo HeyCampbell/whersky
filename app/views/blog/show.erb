@@ -3,4 +3,7 @@
   <h5><%= blog.headline %></h5>
   <h5><%= blog.user.name %> - Posted <%= minutes_in_words(blog.created_at) %> </h5>
   <p><%= blog.content %> </p>
+  <p><% blog.tags.each do |tag| %>
+              <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
+            <% end %></p>
 </div>
