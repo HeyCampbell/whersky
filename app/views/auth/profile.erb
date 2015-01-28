@@ -1,0 +1,10 @@
+<div id='user-profile'>
+  <h2>User Profile: </h2>
+  <h3> Name: <%= current_user.name %> </h3>
+  <h3>Email: <%= current_user.email %> </h3>
+  <h3>Whersky Member For: <%= minutes_in_words(current_user.created_at)%> </h3>
+  <h3>Event Tickets in your pocket: <ul><% current_user.tickets.each do |tick| %>
+    <li><h5><a href='/events/<%= tick.event.id%>'><%= tick.event.title %> </a>- <%= tick.event.date.strftime("on %m/%d at %I:%M%p") %> - <%= tick.event.location %></h5>
+      <p><%= tick.event.description %> </p></li>
+    <% end %>
+</div>
