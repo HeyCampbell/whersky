@@ -42,3 +42,8 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
+
+get '/user/profile', auth: :user do
+  erb :'auth/profile'
+end
