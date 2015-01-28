@@ -1,3 +1,5 @@
+# require 'pluralize'
+
 def minutes_in_words(timestamp)
     minutes = (((Time.now - timestamp).abs)/60).round
 
