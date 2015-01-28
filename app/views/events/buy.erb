@@ -1,0 +1,13 @@
+<div id='ticket-sales-form'>
+  <form action='/events/buytix' method='POST'>
+    <input type='hidden' value='<%= event.id%>'>
+    <h5>Event: <%= event.title %></h5>
+    <h5>Date: <%= event.date.strftime("%m/%d at %I:%M%p") %></h5>
+    <input type='hidden' name='tix[event]' value='<%= event.id %>'>
+    <h5>Quantity: <input type='number' name='tix[quant]' max="<%= event.tix_left %>"> @ $<%= event.price %> each</h5>
+     <h5>Only <%= event.tix_left %> left at this price!</h5>
+    <h5>By clicking purchse, magical things will happen and you will be paying for these tickets.</h5>
+    <p>Its almost like there would be a link to paypal or square on a normal site, but this one is special. :)</p>
+    <input type='submit' value='Purchase'>
+  </form>
+</div>

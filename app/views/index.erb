@@ -1,4 +1,10 @@
+<div id='logo-landing'>
+  <img src="imgs/front1-logo.png">
+  <h2> It's about Dram Time </h2>
+</div>
+
 <div id='main-blog-container'>
+
   <h2>Recent Articles</h2>
     <ul>
       <% Blog.limit(5).order('created_at asc').each do |art| %>
@@ -11,8 +17,8 @@
   <h2> Upcoming Events </h2>
     <ul>
       <% Event.limit(5).order('date asc').each do |evnt| %>
-        <li><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
-          <p><%= evnt.description %> </p>
+        <li><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date.strftime("%m%d%y") %> - <%= evnt.location %></h5>
+          <p><%= evnt.headline %> </p>
         <p><% evnt.tags.each do |tag| %>
               <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
             <% end %></p></li>

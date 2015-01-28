@@ -1,16 +1,16 @@
 /* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 100%; line-height: 100%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: darkslategrey; font-style: italic; font-weight: 400;}
+body {font-family: 'Open Sans', sans-serif; font-size: 94%; line-height: 100%; background: rgb(0, 172, 234);}
+h1, h2, h3, h4, h5, h6 {/* font-family: Georgia; */ line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: whitesmoke; font-weight: 400;}
 h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
+h2 {font-size: 2.6em;}
 h3 {font-size: 1.4em;}
 h4 {font-size: 1.3em;}
 h5 {font-size: 1.2em;}
 h6 {font-size: 1.1em;}
 p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
 ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}
+li {margin: 0.3em;width: 200px;height: 200px;background: rgb(255, 239, 93);border-radius: 10px;padding: 4px;}
+ul {list-style-type: none;display: inline-flex;margin-left: .5em; padding-left: 0.5em;/* background: lemonchiffon; *//* border-radius: 5px; */}
 dt {font-weight: bold;}
 img {border: none;}
 pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
@@ -28,7 +28,7 @@ del {text-decoration: line-through; color: #777777;}
 
 footer { font-size: 0.7em; margin-top: 2em;}
 
-#content { margin: 0 auto; padding: 0 1em;}
+#content { margin: 0; padding: 0; top: 0; width: 100%;}
 
 a {
     color: darkslategrey;
@@ -44,5 +44,32 @@ a:hover {
     text-decoration: underline;
 }
 
+div#login-toolbar {
+    background: gray;
+    font-size: 15px;
+    padding-right: 30px;
+}
+
+header {
+    background: gray;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: right;
+}
 
 
+div#main-blog-container {
+    width: 80%;
+    margin-top: 100px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+div#logo-landing {
+    margin: 0 auto;
+    position: relative;
+    width: 40%;
+    top: 50px;
+    text-align: center;
+}
