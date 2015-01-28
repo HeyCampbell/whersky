@@ -1,0 +1,20 @@
+<div class='tag'>
+  <% if @tag.blogs.count > 0 %>
+  <ul> <%= @tag.name %> Blogs:
+    <% @tag.blogs.each do |art| %>
+        <li><h5><a href='/blog/<%= art.id%>'><%= art.title %> </a>by <a href='/author/<%= art.user.id%>'><%= art.user.name %> </a></h5></li>
+          <% end %>
+    </ul>
+ <% end %>
+
+ <% if @tag.events.count > 0 %>
+  <ul> <%= @tag.name %> Events:
+    <ul>
+      <% @tag.events.each do |evnt| %>
+        <li><h5><a href='/event/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
+          <p><%= evnt.description %> </p></li>
+          <%end%>
+          </ul>
+    <% end %>
+  </div>
+
