@@ -1,0 +1,21 @@
+<div id='main-blog-container'>
+  <h2>Recent Articles</h2>
+    <ul>
+      <% Blog.limit(5).order('created_at asc').each do |art| %>
+        <li><h5><%= art.title %> by <%= art.user.name %> </h5>
+        <p><% art.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %></p></li>
+        <% end %>
+    </ul>
+  <h2> Upcoming Events </h2>
+    <ul>
+      <% Event.limit(5).order('date asc').each do |evnt| %>
+        <li><h5><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
+          <p><%= evnt.description %> </p>
+        <p><% evnt.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %></p></li>
+        <% end %>
+      </ul>
+</div>
