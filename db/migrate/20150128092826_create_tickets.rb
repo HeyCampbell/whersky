@@ -4,6 +4,7 @@ class CreateTickets < ActiveRecord::Migration
       t.references :event
       t.integer :price
       t.references :user
+      t.boolean :paid
 
       t.timestamps
     end
