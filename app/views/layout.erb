@@ -27,8 +27,8 @@
         <p>Welcome, <%= current_user.name %>
           <% if current_admin %>
             <a href='/user/manage'>Manage Users</a>
-            <a href='/event/new'>New Event</a>
-            <a href='/event/manage'>Event Stats</a>
+            <a href='/events/new'>New Event</a>
+            <a href='/events/manage'>Event Stats</a>
             <%end %>
           <% if current_author %>
             <a href='/blog/new'>New Blog</a>

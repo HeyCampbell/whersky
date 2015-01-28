@@ -10,7 +10,7 @@ blog.tags << fun_tag
 
 3.times do
   user = User.create(name: Faker::Internet.name, email: Faker::Internet.email, password: 'jenny', password_confirmation: 'jenny', author: true)
-  5.times do
+  10.times do
     w_tag = Tag.find_or_create_by(name: Faker::App.name)
     fun_tag = Tag.find_or_create_by(name: Faker::Hacker.noun)
     blog = Blog.create(user: user, title: Faker::Hacker.say_something_smart, content: Faker::Lorem.paragraph)
@@ -19,12 +19,17 @@ blog.tags << fun_tag
   end
 end
 
-10.times do
+12.times do
   event = Event.create(title: Faker::Hacker.say_something_smart,
     :description => Faker::Lorem.sentence,
     location: Faker::Address.street_address,
-    date: Faker::Date.forward(23))
+    date: Faker::Date.forward(23),
+    price: 35,
+    total_tickets: rand(20..30))
+  w_tag = Tag.find_or_create_by(name: Faker::App.name)
+    fun_tag = Tag.find_or_create_by(name: Faker::Hacker.noun)
   event.tags << w_tag
   event.tags << fun_tag
+  event.print_tix
 end
 

@@ -15,7 +15,7 @@ gem 'pry'
 gem 'rake'
 gem 'faker', '~>1.4'
 gem 'shotgun'
-
+# gem 'pluralize'
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

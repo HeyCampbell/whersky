@@ -1,0 +1,5 @@
+<div id='all-tags'>
+  <% Tag.all.each do |tag|%>
+    <span style="font-size : <%=tag.get_size%>em"><a href="/tags/<%=tag.id%>"><%= tag.name %> </a></span>
+    <% end %>
+  </div>

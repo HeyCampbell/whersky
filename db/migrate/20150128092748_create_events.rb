@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :total_tickets
       t.references :event_tag
       t.string :img_url
-
+      t.integer :price
       t.timestamps
 
     end

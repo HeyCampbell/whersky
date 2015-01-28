@@ -1,0 +1,9 @@
+<div class='event'>
+  <h3><%= @event.title %></h3>
+  <h5><%= @event.location %></h5>
+  <%= @event.date.strftime("on %m/%d at %I:%M%p") %> - Just <%= minutes_in_words(@event.date) %> left to purchase tickects!
+  <p><%= @event.description %></p>
+
+  <%= @event.tix_left %> tickets still available, <a href='/events/buytix'>Purchase Them Here!</a>
+
+</div>

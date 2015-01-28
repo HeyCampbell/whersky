@@ -1,3 +1,5 @@
+# require 'pluralize'
+
 def minutes_in_words(timestamp)
     minutes = (((Time.now - timestamp).abs)/60).round
 
@@ -13,9 +15,9 @@ def minutes_in_words(timestamp)
       when 240..479        then '&gt; 4 hours'
       when 480..719        then '&gt; 8 hours'
       when 720..1439       then '&gt; 12 hours'
-      when 1440..11519     then '&gt; ' << pluralize((minutes/1440).floor, 'day')
-      when 11520..43199    then '&gt; ' << pluralize((minutes/11520).floor, 'week')
-      when 43200..525599   then '&gt; ' << pluralize((minutes/43200).floor, 'month')
-      else                      '&gt; ' << pluralize((minutes/525600).floor, 'year')
+      when 1440..11519     then "#{(minutes/1440).floor} days"
+      when 11520..43199    then "#{(minutes/11520).floor} weeks"
+      when 43200..525599   then "#{(minutes/43200).floor} month"
+      else                      "#{(minutes/525600).floor} years"
     end
   end
