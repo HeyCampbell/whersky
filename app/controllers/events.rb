@@ -11,8 +11,9 @@ get '/events/:id/edit', auth: :admin do |id|
   erb :'events/edit'
 end
 
-get '/events/buytix' do
-  erb :'events/buy'
+get '/events/buytix', auth: :user do
+  @event = Event.find(params[:event])
+  erb :'events/buy', locals: {event: @event}
 end
 
 post '/events/new' , auth: :admin do
@@ -37,7 +38,13 @@ put '/events/:id', auth: :admin do |id|
   redirect "/events/#{event.id}"
 end
 
-
+post '/events/buytix' do
+  event = Event.find(params[:tix][:event])
+  params[:tix][:quant].to_i.times do
+    event.avail_tix.first.update(user: current_user, paid: true)
+  end
+  redirect "/events/#{event.id}"
+end
 
 
 

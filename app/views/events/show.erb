@@ -4,6 +4,9 @@
   <%= @event.date.strftime("on %m/%d at %I:%M%p") %> - Just <%= minutes_in_words(@event.date) %> left to purchase tickects!
   <p><%= @event.description %></p>
 
-  <%= @event.tix_left %> tickets still available, <a href='/events/buytix'>Purchase Them Here!</a>
+  <%= @event.tix_left %> tickets still available,
 
+  <form action='/events/buytix'>
+   <button type='submit' name='event' value='<%= @event.id %>' >Purchase Tickets</button>
+  </form>
 </div>

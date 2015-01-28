@@ -13,7 +13,13 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def tix_left
-    self.tickets.where(paid: false).count
+  def avail_tix
+    self.tickets.where(paid: false)
   end
+
+  def tix_left
+    avail_tix.count
+  end
+
+
 end
