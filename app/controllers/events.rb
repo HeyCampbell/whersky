@@ -2,13 +2,20 @@ get '/events' do
   erb :'events/all'
 end
 
-
-
 get '/events/new' do
   erb :'events/new'
 end
 
-post '/events/new' do
+get '/events/:id/edit', auth: :admin do |id|
+  @event = Event.find(id)
+  erb :'events/edit'
+end
+
+get '/events/buytix' do
+  erb :'events/buy'
+end
+
+post '/events/new' , auth: :admin do
   p params
   # params[:event][:date] = Date.new(params[:event][:date])
   p params
@@ -24,14 +31,15 @@ post '/events/new' do
   redirect "/events/#{event.id}"
 end
 
-put 'events/:id/edit' do
-
-
+put '/events/:id', auth: :admin do |id|
+  event = Event.find(id)
+  event.update(params[:event])
+  redirect "/events/#{event.id}"
 end
 
-get 'events/buytix' do
-  erb :'events/buy'
-end
+
+
+
 
 get '/events/:id' do |id|
   @event = Event.find(id)

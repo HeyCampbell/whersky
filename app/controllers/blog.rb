@@ -12,7 +12,7 @@ get '/blog/:id/edit', auth: :author do |id|
 end
 
 
-post '/blog/new', auth: :author do
+post '/blog', auth: :author do
   params[:blog][:user] = current_user
  p params
   blog = Blog.create(params[:blog])
@@ -26,10 +26,10 @@ post '/blog/new', auth: :author do
   redirect "/blog/#{blog.id}"
 end
 
-put '/blog/:id/edit', auth: :author do |id|
+put '/blog/:id', auth: :author do |id|
   blog = Blog.find(id)
   blog.update(params[:blog])
-
+  redirect "/blog/#{blog.id}"
 end
 
 get '/blog/:id' do |id|
