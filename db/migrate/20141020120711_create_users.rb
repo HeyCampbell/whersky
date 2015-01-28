@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :author
       t.boolean :admin
       t.boolean :premium
+
+      t.timestamps
     end
   end
 end
