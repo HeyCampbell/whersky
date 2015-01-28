@@ -14,6 +14,6 @@ class Event < ActiveRecord::Base
   end
 
   def tix_left
-    self.tickets.where(paid: false)
+    self.tickets.where(paid: false).count
   end
 end
