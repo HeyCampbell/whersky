@@ -1,0 +1,11 @@
+<div id='all-events'>
+  <ul>
+  <% Event.order('date asc').each do |evnt| %>
+  <li><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> </a>- <%= evnt.date.strftime("on %m/%d at %I:%M%p") %> - <%= evnt.location %></h5>
+          <p><%= evnt.description %> </p>
+        <p><% evnt.tags.each do |tag| %>
+              <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
+            <% end %></p></li>
+        <% end %>
+      </ul>
+</div>
