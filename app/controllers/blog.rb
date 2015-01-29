@@ -30,7 +30,5 @@ put '/blog/:id', auth: :author do |id|
 end
 
 get '/blog/:id' do |id|
-
     erb :'blog/show', locals: {blog: Blog.find(id)}
-
 end
