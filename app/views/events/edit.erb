@@ -1,0 +1,24 @@
+<div id='edit-event-form'>
+  <form action='/events/<%= @event.id %>' method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    Title: <input type='text' name='event[title]' value='<%=@event.title%>'>
+    Date: <input type='text' name='event[date]' value='<%=@event.date.strftime("%m/%d/%Y")%>'>
+    Description: <input type='text' name='event[description]' value='<%=@event.description%>'>
+    Headline: <input type='text' name='event[headline]' value='<%=@event.headline%>'>
+    Location: <input type='text' name='event[location]' value='<%=@event.location%>'>
+    Tickets Available: <input type='number' name='event[total_tickets]' value='<%=@event.total_tickets%>'>
+    Ticket Price: $<input type='number' name='event[price]' value='<%=@event.price%>'>
+    Image: <img src='<%=@event.img_url%>'>
+    <input type='text' name='event[img_url]' value='<%=@event.img_url%>'>
+    Tags: <input type='text' name='tags' placeholder='Seperate tags with commas'>
+    <input type='submit' value='Edit Event'>
+  </form>
+</div>
+
+
+
+  <form action="/events/<%= @event.id %>" method="POST" class="comment_delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete!">
+  </form>
+</div>

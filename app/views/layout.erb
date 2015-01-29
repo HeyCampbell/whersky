@@ -10,6 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/application.css">
   <!-- Load Vollkorn font -->
   <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
@@ -23,20 +24,24 @@
 <div id="content">
   <header>
     <div id="login-toolbar">
+
       <% if current_user %>
-        <p>Welcome, <%= current_user.name %>
+        <p>Welcome, <a href='/user/profile'><%= current_user.name %></a>  |
           <% if current_admin %>
-            <a href='/user/manage'>Manage Users</a>
-            <a href='/events/new'>New Event</a>
-            <a href='/events/manage'>Event Stats</a>
+         <!--    <a href='/user/manage'>Manage Users</a>  |   -->
+            <a href='/events/new'>New Event</a>  |
+         <!--    <a href='/events/manage'>Event Stats</a> -->
             <%end %>
           <% if current_author %>
-            <a href='/blog/new'>New Blog</a>
+            <a href='/blog/new'>New Blog</a>  |
           <% end %>
         <a href="/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>
+        <a id="login-button" href="/login">Login</a>  |
+        <a id="signup-button" href="/signup">Create account</a>
       <% end %>
+    <div id="login"></div>
+    <div id="signup"></div>
   </header>
   <%= yield %>
 </div>

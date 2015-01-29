@@ -1,9 +1,17 @@
+<%= erb :_logo_bar %>
 <div class='event'>
-  <h3><%= @event.title %></h3>
+   <h3><%= @event.title %></h3>
+  <div class='content'>
+
   <h5><%= @event.location %></h5>
   <%= @event.date.strftime("on %m/%d at %I:%M%p") %> - Just <%= minutes_in_words(@event.date) %> left to purchase tickects!
   <p><%= @event.description %></p>
 
-  <%= @event.tix_left %> tickets still available, <a href='/events/buytix'>Purchase Them Here!</a>
+  <%= @event.tix_left %> tickets still available,
 
+  <form id="buy-tix" action='/events/buytix'>
+    <input type='hidden' name='event' value='<%= @event.id %>'>
+   <input type='submit'  value='Purchase Tickets'>
+  </form>
+  </div>
 </div>

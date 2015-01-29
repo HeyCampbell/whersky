@@ -1,21 +1,25 @@
+<div id='logo-landing'>
+  <img src="imgs/front1-logo.png">
+  <h2> It's about Dram Time </h2>
+</div>
+
 <div id='main-blog-container'>
+
   <h2>Recent Articles</h2>
-    <ul>
-      <% Blog.limit(5).order('created_at asc').each do |art| %>
-        <li><h5><a href='/blog/<%= art.id%>'><%= art.title %> </a>by <a href='/author/<%= art.user.id%>'><%= art.user.name %> </a></h5>
-        <p><% art.tags.each do |tag| %>
-              <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
-            <% end %></p></li>
+
+      <% Blog.limit(12).order('created_at asc').each_slice(4) do |quad| %>
+          <ul><% quad.each do |art| %>
+        <li style='background-image: url(<%= art.img_url %>); background-size: cover'><h5><a href='/blog/<%= art.id%>'><%= art.title %> </a>by <a href='/author/<%= art.user.id%>'><%= art.user.name %> </a></h5>
         <% end %>
     </ul>
+    <% end %>
   <h2> Upcoming Events </h2>
-    <ul>
-      <% Event.limit(5).order('date asc').each do |evnt| %>
-        <li><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
-          <p><%= evnt.description %> </p>
-        <p><% evnt.tags.each do |tag| %>
-              <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
-            <% end %></p></li>
+
+      <% Event.limit(12).order('date asc').each_slice(4) do |quad| %>
+          <ul><% quad.each do |evnt| %>
+        <li style='background-image: url(<%= evnt.img_url %>);background-size: cover'><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date.strftime("%m%d%y") %> - <%= evnt.location %></h5>
+          <p><%= evnt.headline %> </p>
         <% end %>
       </ul>
+      <%end %>
 </div>

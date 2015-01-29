@@ -1,9 +1,19 @@
+<%= erb :_logo_bar %>
+
 <div class='full_blog'>
   <h2><%= blog.title %> </h2>
   <h5><%= blog.headline %></h5>
+  <div class='content'>
   <h5><%= blog.user.name %> - Posted <%= minutes_in_words(blog.created_at) %> </h5>
   <p><%= blog.content %> </p>
   <p><% blog.tags.each do |tag| %>
               <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
             <% end %></p>
+          </div>
+      <% if current_admin || current_author == blog.user %>
+        <form id='edit-blog'>
+          <input type='hidden' name='blog' value='<%=blog.id%>'>
+          <input type='submit' value='Edit this entry'>
+          </form>
+        <% end %>
 </div>

@@ -1,0 +1,17 @@
+<div id='edit-blog-form'>
+  <form action='/blog/<%= @blog.id %>' method='POST'>
+    <input type="hidden" name="_method" value="PUT">
+    <p>Title: <input type='text' name='blog[title]' value='<%= @blog.title %>' ></p>
+    <p>Headline: <input type='text' name='blog[headline]' value='<%= @blog.headline %>'></p>
+    <p>Content: <textarea name='blog[content]' rows='8' cols='50'><%= @blog.content %> </textarea>
+    <p>Tags: <input type='text' name='tags' placeholder='Seperate tags with commas'>
+      <p>Img: <input cols='60' type='text' name='blog[img_url]' value='<%= @blog.img_url %>'>
+    <input type='submit' value='Edit Blog'>
+  </form>
+
+  <form action="/blog/<%= @blog.id %>" method="POST" class="comment_delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete!">
+  </form>
+</div>
+
