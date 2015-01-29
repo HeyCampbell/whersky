@@ -9,8 +9,9 @@
 
   <%= @event.tix_left %> tickets still available,
 
-  <form action='/events/buytix'>
-   <button type='submit' name='event' value='<%= @event.id %>' >Purchase Tickets</button>
+  <form id="buy-tix" action='/events/buytix'>
+    <input type='hidden' name='event' value='<%= @event.id %>'>
+   <input type='submit'  value='Purchase Tickets'>
   </form>
   </div>
 </div>

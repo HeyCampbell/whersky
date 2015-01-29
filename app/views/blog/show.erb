@@ -10,6 +10,10 @@
               <a href='/tags/<%=tag.id%>'><%= tag.name %></a>
             <% end %></p>
           </div>
-
-
+      <% if current_admin || current_author == blog.user %>
+        <form id='edit-blog'>
+          <input type='hidden' name='blog' value='<%=blog.id%>'>
+          <input type='submit' value='Edit this entry'>
+          </form>
+        <% end %>
 </div>

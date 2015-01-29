@@ -1,15 +1,18 @@
 <div id='new-event-form'>
+    <h4>New Event</h4>
+    <div class='content'>
   <form action='/events/new' method="POST">
-    Title: <input type='text' name='event[title]'>
-    Date: <input type='date' name='event[date]'>
-    Description: <input type='text' name='event[description]'>
-    Headline: <input type='text' name='event[headline]'>
-    Location: <input type='text' name='event[location]'>
-    Tickets Available: <input type='number' name='event[total_tickets]'>
-    Ticket Price: $<input type='number' name='event[price]'>
-    Image: <input type='text' name='event[img_url]'>
-    Tags: <input type='text' name='tags' placeholder='Seperate tags with commas'>
+    <p>Title: <input type='text' name='event[title]'>
+    <p>Date: <input type='date' name='event[date]'>
+    <p>Description: <input type='text' name='event[description]'>
+    <p>Headline: <input type='text' name='event[headline]'>
+    <p>Location: <input type='text' name='event[location]'>
+    <p>Tickets Available: <input type='number' name='event[total_tickets]'>
+    <p>Ticket Price: $<input type='number' name='event[price]'>
+    <p>Image: <input type='text' name='event[img_url]'>
+    <p>Tags: <input type='text' name='tags' placeholder='Seperate tags with commas'>
     <input type='submit' value='Create Event'>
   </form>
+</div>
 </div>
 

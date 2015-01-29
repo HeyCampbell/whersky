@@ -37,9 +37,11 @@
           <% end %>
         <a href="/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>  |
-        <a href="/signup">Create account</a>
+        <a id="login-button" href="/login">Login</a>  |
+        <a id="signup-button" href="/signup">Create account</a>
       <% end %>
+    <div id="login"></div>
+    <div id="signup"></div>
   </header>
   <%= yield %>
 </div>

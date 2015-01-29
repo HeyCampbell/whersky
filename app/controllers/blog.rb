@@ -2,13 +2,10 @@ get '/blog/new', auth: :author do
   erb :'blog/new'
 end
 
-get '/blog/:id/edit', auth: :author do |id|
-  @blog = Blog.find(id)
-  if current_user == blog.user
-    erb :'blog/edit'
-  else
-    redirect '/blog/#{@blog.id}'
-  end
+get '/blog/edit', auth: :author do
+
+  @blog = Blog.find(params[:blog])
+  erb :'blog/edit'
 end
 
 

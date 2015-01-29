@@ -6,15 +6,18 @@ get '/events/new' do
   erb :'events/new'
 end
 
+get '/events/buytix' do
+  p params
+  @event = Event.find(params[:event])
+  return erb :'events/buy', locals: {event: @event}
+end
+
 get '/events/:id/edit', auth: :admin do |id|
   @event = Event.find(id)
   erb :'events/edit'
 end
 
-get '/events/buytix', auth: :user do
-  @event = Event.find(params[:event])
-  erb :'events/buy', locals: {event: @event}
-end
+# , auth: :user
 
 post '/events/new' , auth: :admin do
   p params

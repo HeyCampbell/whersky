@@ -84,18 +84,20 @@ div#logo-head img {
 div#logo-head {
     /* display: inline; */
     margin-left: 2%;
-    margin-top: 2%;
+    margin-top: 4%;
     /* height: 94px; */
 }
 
-.full_blog, .event, #user-profile{
+.full_blog, .event, #user-profile, .tag, #new-event-form{
     width: 80%;
     margin: auto;
     background: darkgray;
     padding: 15px 0 15px 0;
     border-radius: 10px;
 }
-
+.tag, #new-event-form {
+    margin-top: 11%;
+}
 .content {
     /* width: 100%; */
     background: whitesmoke;
@@ -119,4 +121,7 @@ div#login-toolbar a {
     font-size: 1.5em;
     color: white;
     line-height: 125%;
+}
+div#new-event-form h4 {
+    margin-left: 20px;
 }

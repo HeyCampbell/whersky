@@ -1,4 +1,4 @@
-
+photos=['https://whersky.com/wp-content/uploads/2014/10/WherskyRochellesInsta-300x300.jpg','https://whersky.com/wp-content/uploads/2015/01/Robert-Burns-e1422124073508.jpeg', 'https://whersky.com/wp-content/uploads/2014/09/photos-up-redroom-300x200.jpg', 'https://whersky.com/wp-content/uploads/2015/01/Presentation1-e1421885951252.jpg', 'https://whersky.com/wp-content/uploads/2015/01/Webster-Halls-East-Ville-des-Folies-4-e1421886150192.jpg', 'https://whersky.com/wp-content/uploads/2015/01/Presentation2-e1421981464575-1024x303.jpg', 'https://whersky.com/wp-content/uploads/2014/12/WhiskeyBottles1-e1419149155421.jpg', 'https://whersky.com/wp-content/uploads/2014/12/04.springbank-150x150.jpg']
 user = User.create(name: 'Jenny', email: 'jenny@example.com', password: 'jenny', password_confirmation: 'jenny', admin: true)
 
 w_tag = Tag.find_or_create_by(name: 'whiskey')
@@ -53,18 +53,19 @@ Robert Burns
 
 Tonight, dream of the “sunny beam” and “crystal stream” while you explore a new Scotch you’ve been considering, pull a dusty one from the back of your shelf, or try one our suggestions below. Find some haggis and celebrate like a true Scot! Cheers to you, Robert Burns.
 
-', img_url: 'https://whersky.com/wp-content/uploads/2015/01/Robert-Burns-e1422124073508.jpeg')
+', img_url: photos.sample)
     blog.tags << w_tag
     blog.tags << fun_tag
   end
 end
 
-12.times do
+18.times do
   event = Event.create(title: Faker::Hacker.say_something_smart,
     :description => Faker::Lorem.sentence,
     location: Faker::Address.street_address,
     date: Faker::Date.forward(23),
     price: 35,
+    img_url: photos.sample,
     total_tickets: rand(20..30))
   w_tag = Tag.find_or_create_by(name: Faker::App.name)
     fun_tag = Tag.find_or_create_by(name: Faker::Hacker.noun)
