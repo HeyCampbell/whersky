@@ -5,12 +5,12 @@ h1 {font-size: 1.8em;}
 h2 {font-size: 2.6em;}
 h3 {font-size: 1.4em;}
 h4 {font-size: 1.3em;}
-h5 {font-size: 1.2em;}
+.content h5 {font-size: 1.2em;color: black;}
 h6 {font-size: 1.1em;}
 p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
 ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em;width: 200px;height: 200px;background: rgb(255, 239, 93);border-radius: 10px;padding: 4px;}
-ul {list-style-type: none;display: inline-flex;margin-left: .5em; padding-left: 0.5em;/* background: lemonchiffon; *//* border-radius: 5px; */}
+li {margin: 1.3em;width: 200px;height: 200px;background: rgb(255, 239, 93);border-radius: 10px;padding: 4px;}
+ul {list-style-type: none;display: inline-flex;margin-left: .5em; padding-left: 0.5em;/* background: lemonchiffon; *//* border-radius: 5px; */width: 80%;margin: auto;}
 dt {font-weight: bold;}
 img {border: none;}
 pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
@@ -48,6 +48,8 @@ div#login-toolbar {
     background: gray;
     font-size: 15px;
     padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 header {
@@ -72,4 +74,49 @@ div#logo-landing {
     width: 40%;
     top: 50px;
     text-align: center;
+}
+div#logo-head img {
+    width: 100px;
+    display: inline;
+}
+
+
+div#logo-head {
+    /* display: inline; */
+    margin-left: 2%;
+    margin-top: 2%;
+    /* height: 94px; */
+}
+
+.full_blog, .event, #user-profile{
+    width: 80%;
+    margin: auto;
+    background: darkgray;
+    padding: 15px 0 15px 0;
+    border-radius: 10px;
+}
+
+.content {
+    /* width: 100%; */
+    background: whitesmoke;
+    /* margin: auto; */
+    padding: 15px;
+    border-radius: 15px;
+}
+div#user-profile {
+    padding-left: 20px;
+    width: 70%;
+}
+
+div#user-profile ul {
+    width: 100%;
+    margin: auto;
+}
+div#login-toolbar a {
+    color: white;
+}
+#main-blog-container li a {
+    font-size: 1.5em;
+    color: white;
+    line-height: 125%;
 }

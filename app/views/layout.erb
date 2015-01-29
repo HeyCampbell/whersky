@@ -24,20 +24,21 @@
 <div id="content">
   <header>
     <div id="login-toolbar">
+
       <% if current_user %>
-        <p>Welcome, <%= current_user.name %>
+        <p>Welcome, <a href='/user/profile'><%= current_user.name %></a>  |
           <% if current_admin %>
-            <a href='/user/manage'>Manage Users</a>
-            <a href='/events/new'>New Event</a>
-            <a href='/events/manage'>Event Stats</a>
+         <!--    <a href='/user/manage'>Manage Users</a>  |   -->
+            <a href='/events/new'>New Event</a>  |
+         <!--    <a href='/events/manage'>Event Stats</a> -->
             <%end %>
           <% if current_author %>
-            <a href='/blog/new'>New Blog</a>
+            <a href='/blog/new'>New Blog</a>  |
           <% end %>
         <a href="/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>
-        <a href="/signup>">Create account</a>
+        <a href="/login">Login</a>  |
+        <a href="/signup">Create account</a>
       <% end %>
   </header>
   <%= yield %>
