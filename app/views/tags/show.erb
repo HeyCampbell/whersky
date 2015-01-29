@@ -11,7 +11,7 @@
   <ul> <%= @tag.name %> Events:
     <ul>
       <% @tag.events.each do |evnt| %>
-        <li><h5><a href='/event/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
+        <li><h5><a href='/events/<%= evnt.id%>'><%= evnt.title %> - <%= evnt.date %> - <%= evnt.location %></h5>
           <p><%= evnt.description %> </p></li>
           <%end%>
           </ul>
